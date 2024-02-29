@@ -1,49 +1,54 @@
 .container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+    width: 100%;
     height: 100vh;
+    background-image: url(../../../assets/images/background.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20%;
 }
 
 .card {
-    width: 300px;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    height: 70%;
+    padding: 1em;
     border-radius: 10px;
     background-color: #fff;
     text-align: center;
 }
 
-.logo {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
 .logo img {
-    width: 80px;
-    height: 80px;
+    max-width: 75px;
     border-radius: 50%;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
-    margin-bottom: 15px;
+    margin: 1em;
 }
 
 .form-group label {
-    margin-bottom: 5px;
     user-select: none;
 }
 
 .form-group input {
+    border: 1px solid #111;
     padding: 10px;
-    border: 1px solid #ccc;
     border-radius: 5px;
 }
 
 .form-group input[type="submit"] {
-    margin-top: 1em;
     background-color: #09ce7c;
     color: #fff;
     cursor: pointer;
@@ -52,4 +57,8 @@
 
 .form-group input[type="submit"]:hover {
     background-color: #08e98b;
+}
+
+.password-reset {
+
 }

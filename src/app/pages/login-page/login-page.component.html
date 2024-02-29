@@ -1,20 +1,28 @@
 <div class="container">
-  <div class="card">
-    <div class="logo">
-      <img src="./assets/images/logo-dark.svg" alt="Logo" draggable="false"/>
+  <div class="card-container">
+    <div class="card">
+      <div class="title">
+        <p>Login</p>
+      </div>
+      <div class="logo">
+        <img src="./assets/images/logo-dark.svg" alt="Logo" draggable="false" />
+      </div>
+      <form action="#" method="post">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
+      <div class="password-reset">
+        Forgot your password? 
+      </div>
     </div>
-    <form action="#" method="post">
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" required />
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required />
-      </div>
-      <div class="form-group">
-        <input type="submit" value="Submit" />
-      </div>
-    </form>
-  </div>
+  </div>  
 </div>
