@@ -1,0 +1,13 @@
+.star-empty,
+.star-full {
+    height: 30px;
+    width: 30px;
+}
+
+.star-full {
+    filter: invert(69%) sepia(77%) saturate(575%) hue-rotate(2deg) brightness(104%) contrast(109%);
+}
+
+.star-empty {
+    filter: invert(88%) sepia(13%) saturate(1%) hue-rotate(314deg) brightness(97%) contrast(85%);
+}
