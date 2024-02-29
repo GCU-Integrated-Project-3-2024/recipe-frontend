@@ -1,0 +1,8 @@
+.featured-recipes-bar {
+    display: flex;
+    border: 1px solid #fff;
+    margin-top: 10px;
+    padding: 1em;
+    justify-content: center;
+    overflow-x: auto; /* Enables horizontal scrolling if needed */
+}
