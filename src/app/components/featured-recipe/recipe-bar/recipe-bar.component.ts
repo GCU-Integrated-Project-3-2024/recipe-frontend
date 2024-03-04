@@ -1,15 +1,15 @@
-import { Component } from '@angular/core';
-import { FeaturedRecipeCardComponent } from '../featured-recipe-card/featured-recipe-card.component';
+import {Component} from '@angular/core';
+import {FeaturedRecipeCardComponent} from '../featured-recipe-card/featured-recipe-card.component';
 
 @Component({
-  selector: 'app-featured-recipe-bar',
+  selector: 'app-recipe-bar',
   standalone: true,
   imports: [FeaturedRecipeCardComponent],
-  templateUrl: './featured-recipe-bar.component.html',
-  styleUrl: './featured-recipe-bar.component.scss'
+  templateUrl: './recipe-bar.component.html',
+  styleUrl: './recipe-bar.component.scss'
 })
 
-export class FeaturedRecipeBarComponent {
+export class RecipeBarComponent {
   featuredRecipes = [
     { id: 1, name: 'Recipe 1', imageUrl: '/assets/images/food/burger.jpeg', rating: 4.5 },
     { id: 2, name: 'Recipe 2', imageUrl: '/assets/images/food/fishchips.jpg', rating: 3.8 },
