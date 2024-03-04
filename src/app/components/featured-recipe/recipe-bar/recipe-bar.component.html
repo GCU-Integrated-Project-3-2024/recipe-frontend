@@ -1,5 +1,5 @@
-<div class="featured-recipes-bar">
-  @for (recipe of featuredRecipes; track recipe.id;) {
-  <app-featured-recipe-card [recipe]="recipe" />
+<div class="recipes-bar">
+  @for (recipe of recipes; track recipe.id;) {
+  <app-recipe-card [recipe]="recipe" />
   }
 </div>

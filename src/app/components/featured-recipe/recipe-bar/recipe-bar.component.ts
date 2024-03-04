@@ -10,7 +10,7 @@ import {RecipeCardComponent} from '../recipe-card/recipe-card.component';
 })
 
 export class RecipeBarComponent {
-  featuredRecipes = [
+  recipes = [
     { id: 1, name: 'Recipe 1', imageUrl: '/assets/images/food/burger.jpeg', rating: 4.5 },
     { id: 2, name: 'Recipe 2', imageUrl: '/assets/images/food/fishchips.jpg', rating: 3.8 },
     { id: 3, name: 'Recipe 3', imageUrl: '/assets/images/food/chili.jpg', rating: 2.4 },
