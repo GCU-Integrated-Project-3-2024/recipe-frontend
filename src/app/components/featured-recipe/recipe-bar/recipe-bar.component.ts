@@ -1,10 +1,10 @@
 import {Component} from '@angular/core';
-import {FeaturedRecipeCardComponent} from '../featured-recipe-card/featured-recipe-card.component';
+import {RecipeCardComponent} from '../recipe-card/recipe-card.component';
 
 @Component({
   selector: 'app-recipe-bar',
   standalone: true,
-  imports: [FeaturedRecipeCardComponent],
+  imports: [RecipeCardComponent],
   templateUrl: './recipe-bar.component.html',
   styleUrl: './recipe-bar.component.scss'
 })
