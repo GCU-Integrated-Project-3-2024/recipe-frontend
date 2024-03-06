@@ -1,0 +1,17 @@
+.recipe-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.recipe {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1pt solid white;
+}
+
+app-star-rating {
+    height: 100%;
+    border: 1pt solid white;
+    align-self: center;
+}

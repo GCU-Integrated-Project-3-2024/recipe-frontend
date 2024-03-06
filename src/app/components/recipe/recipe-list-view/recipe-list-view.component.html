@@ -1,0 +1,8 @@
+<div class="recipe-list">
+    @for (recipe of recipes; track recipe.id;) {
+        <div class="recipe">
+            <p>{{ recipe.name }}</p>
+            <app-star-rating [rating]="recipe.rating"></app-star-rating>
+        </div>
+    }
+</div>
