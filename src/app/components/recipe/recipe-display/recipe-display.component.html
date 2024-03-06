@@ -1,7 +1,15 @@
 <div class="top-bar">
     <h1>Recipes</h1>
+    <div class="controls">
+        <button class="list-view" (click)="switchToListView()"></button>
+        <button class="grid-view" (click)="switchToGridView()"></button>
+    </div>
 </div>
 <div class="recipe-display">
-    <app-recipe-list-view />
+    @if (isListView == true) {
+        <app-recipe-list-view [recipes]="this.recipes"/>
+    } @else {
+        <app-recipe-grid-view [recipes]="this.recipes"/>
+    }
 </div>
 

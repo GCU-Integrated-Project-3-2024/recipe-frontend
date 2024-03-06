@@ -2,6 +2,7 @@
     height: 65px;
     width: 90%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     margin: auto;
     color: #fff;
@@ -14,4 +15,25 @@
 .recipe-display {
     width: 80%;
     margin: auto;
+}
+
+.grid-view,
+.list-view {
+    height: 30px;
+    width: 30px;
+    border: none;
+    background: none;
+    padding: 0;
+    background-size: cover;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(67deg) brightness(104%) contrast(104%);
+    cursor: pointer;
+}
+
+.list-view {
+    background-image: url('../../../../assets/icons/list-view.svg');
+    margin-right: 1em;
+}
+
+.grid-view {
+    background-image: url('../../../../assets/icons/grid-view.svg');
 }
