@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {RecipeBarComponent} from '../../components/featured-recipe/recipe-bar/recipe-bar.component';
+import { Component } from '@angular/core';
+import { RecipeBarComponent } from '../../components/recipe/recipe-bar/recipe-bar.component';
 
 @Component({
   selector: 'app-home-page',
@@ -8,6 +8,7 @@ import {RecipeBarComponent} from '../../components/featured-recipe/recipe-bar/re
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss'
 })
+
 export class HomePageComponent {
 
 }
