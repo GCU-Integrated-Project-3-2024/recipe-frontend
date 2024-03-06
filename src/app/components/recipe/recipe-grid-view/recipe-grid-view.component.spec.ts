@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { RecipeGridViewComponent } from './recipe-grid-view.component';
 
 describe('RecipeGridViewComponent', () => {
