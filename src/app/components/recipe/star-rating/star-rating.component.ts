@@ -13,12 +13,9 @@ export class StarRatingComponent implements OnChanges {
   stars: boolean[] = [];
 
   ngOnChanges() {
-    console.log('ngOnChanges called');
-    console.log('rating:', this.rating);
     this.stars = Array(5).fill(false);
     for (let i = 0; i < this.rating; i++) {
       this.stars[i] = true;
     }
-    console.log('stars:', this.stars);
   }
 }
