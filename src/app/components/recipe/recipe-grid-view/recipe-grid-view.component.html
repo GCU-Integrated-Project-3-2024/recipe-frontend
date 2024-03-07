@@ -1,0 +1,5 @@
+<div class="grid-view">
+    @for (recipe of recipes; track recipe.id;) {
+        <app-recipe-card [recipe]="recipe" />
+    }
+</div>
