@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RecipeListViewComponent } from '../recipe-list-view/recipe-list-view.component';
 import { RecipeGridViewComponent } from '../recipe-grid-view/recipe-grid-view.component';
 
 @Component({
   selector: 'app-recipe-display',
   standalone: true,
-  imports: [RecipeListViewComponent, RecipeGridViewComponent],
+  imports: [CommonModule, RecipeListViewComponent, RecipeGridViewComponent],
   templateUrl: './recipe-display.component.html',
   styleUrl: './recipe-display.component.scss'
 })

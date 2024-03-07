@@ -37,3 +37,7 @@
 .grid-view {
     background-image: url('../../../../assets/icons/grid-view.svg');
 }
+
+button.selected {
+    filter: invert(66%) sepia(53%) saturate(3797%) hue-rotate(111deg) brightness(98%) contrast(93%);
+}

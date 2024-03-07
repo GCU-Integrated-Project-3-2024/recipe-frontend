@@ -1,8 +1,8 @@
 <div class="top-bar">
     <h1>Recipes</h1>
     <div class="controls">
-        <button class="list-view" (click)="switchToListView()"></button>
-        <button class="grid-view" (click)="switchToGridView()"></button>
+        <button [ngClass]="{'selected': isListView}" class="list-view" (click)="switchToListView()"></button>
+        <button [ngClass]="{'selected': !isListView}" class="grid-view" (click)="switchToGridView()"></button>
     </div>
 </div>
 <div class="recipe-display">
