@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RecipeListViewComponent } from '../recipe-list-view/recipe-list-view.component';
 import { RecipeGridViewComponent } from '../recipe-grid-view/recipe-grid-view.component';
+import { ModalComponent } from '../../modal/modal.component';
 
 @Component({
   selector: 'app-recipe-display',
   standalone: true,
-  imports: [CommonModule, RecipeListViewComponent, RecipeGridViewComponent],
+  imports: [CommonModule, RecipeListViewComponent, RecipeGridViewComponent, ModalComponent],
   templateUrl: './recipe-display.component.html',
   styleUrl: './recipe-display.component.scss'
 })
@@ -22,6 +23,8 @@ export class RecipeDisplayComponent {
     { id: 7, name: 'Recipe 7', imageUrl: '/assets/images/food/smoothie.jpg', rating: 6 }
   ];
 
+  @ViewChild(ModalComponent) modal!: ModalComponent;
+
   isListView: boolean = true;
 
   switchToListView() {
@@ -30,5 +33,13 @@ export class RecipeDisplayComponent {
 
   switchToGridView() {
     this.isListView = false;
+  }
+
+  openModal() {
+    this.modal.openModal();
+  }
+
+  closeModal() {
+    this.modal.closeModal();
   }
 }

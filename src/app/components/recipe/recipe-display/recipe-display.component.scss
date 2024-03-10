@@ -17,8 +17,17 @@
     margin: auto;
 }
 
+.buttons {
+    display: flex;
+    width: 8%;
+    min-width: 100px;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .grid-view,
-.list-view {
+.list-view,
+.add-recipe {
     height: 30px;
     width: 30px;
     border: none;
@@ -31,11 +40,14 @@
 
 .list-view {
     background-image: url('../../../../assets/icons/list-view.svg');
-    margin-right: 1em;
 }
 
 .grid-view {
     background-image: url('../../../../assets/icons/grid-view.svg');
+}
+
+.add-recipe {
+    background-image: url('../../../../assets/icons/add-recipe.svg');
 }
 
 button.selected {

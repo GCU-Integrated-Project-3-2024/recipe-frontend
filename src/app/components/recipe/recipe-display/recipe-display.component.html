@@ -1,6 +1,7 @@
 <div class="top-bar">
     <h1>Recipes</h1>
-    <div class="controls">
+    <div class="buttons">
+        <button (click)="openModal()" class="add-recipe"></button>
         <button [ngClass]="{'selected': isListView}" class="list-view" (click)="switchToListView()"></button>
         <button [ngClass]="{'selected': !isListView}" class="grid-view" (click)="switchToGridView()"></button>
     </div>
@@ -12,4 +13,6 @@
         <app-recipe-grid-view [recipes]="this.recipes"/>
     }
 </div>
+<app-modal title="Add Recipe">
+</app-modal>
 
