@@ -2,6 +2,7 @@
     height: 65px;
     width: 100%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     margin: auto;
     color: #fff;
@@ -9,4 +10,8 @@
     background-color: #121212;
     border-radius: 10px;
     margin-bottom: 1em;
+}
+
+h1 {
+    order: 0;
 }

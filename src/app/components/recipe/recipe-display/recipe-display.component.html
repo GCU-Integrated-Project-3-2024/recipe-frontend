@@ -1,11 +1,10 @@
-<div class="top-bar">
-    <h1>Recipes</h1>
+<app-header title="Recipes">
     <div class="buttons">
         <button (click)="openModal()" class="add-recipe"></button>
         <button [ngClass]="{'selected': isListView}" class="list-view" (click)="switchToListView()"></button>
         <button [ngClass]="{'selected': !isListView}" class="grid-view" (click)="switchToGridView()"></button>
     </div>
-</div>
+</app-header>
 <div class="recipe-display">
     @if (isListView == true) {
         <app-recipe-list-view [recipes]="this.recipes"/>

@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RecipeListViewComponent } from '../recipe-list-view/recipe-list-view.component';
 import { RecipeGridViewComponent } from '../recipe-grid-view/recipe-grid-view.component';
 import { ModalComponent } from '../../modal/modal.component';
+import { HeaderComponent } from '../../header/header.component';
 
 @Component({
   selector: 'app-recipe-display',
   standalone: true,
-  imports: [CommonModule, RecipeListViewComponent, RecipeGridViewComponent, ModalComponent],
+  imports: [CommonModule, RecipeListViewComponent, RecipeGridViewComponent, ModalComponent, HeaderComponent],
   templateUrl: './recipe-display.component.html',
   styleUrl: './recipe-display.component.scss'
 })
