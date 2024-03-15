@@ -4,6 +4,7 @@ import { HomePageComponent } from "./pages/home-page/home-page.component";
 import { BaseLayoutComponent } from "./layouts/base-layout/base-layout.component";
 import { RecipePageComponent } from './pages/recipe-page/recipe-page.component';
 import { DiscoverPageComponent } from './pages/discover-page/discover-page.component';
+import { AccountPageComponent } from './pages/account-page/account-page.component';
 
 export const routes: Routes = [
 
@@ -15,7 +16,8 @@ export const routes: Routes = [
       {path: '', component: HomePageComponent},
       {path: 'home', component: HomePageComponent},
       {path: 'recipes', component: RecipePageComponent},
-      {path: 'discover', component: DiscoverPageComponent}
+      {path: 'discover', component: DiscoverPageComponent},
+      {path: 'account', component: AccountPageComponent}
     ],
   },
 
