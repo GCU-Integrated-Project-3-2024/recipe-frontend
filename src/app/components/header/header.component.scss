@@ -1,10 +1,9 @@
 .container {
     height: 65px;
-    width: 100%;
+    min-width: 240px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: auto;
     color: #fff;
     padding: 1em;
     background-color: #121212;

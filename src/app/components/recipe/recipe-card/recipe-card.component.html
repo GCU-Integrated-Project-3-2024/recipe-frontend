@@ -1,6 +1,10 @@
 <div class="recipe-card">
-    <img [src]="recipe.imageUrl" alt="Recipe Image">
-    <h2>{{ recipe.name }}</h2>
+    @if (recipe.imageUrl == null) {
+        <img src="../../../../assets/images/placeholder-image.svg" alt="Recipe Image">
+    } @else {
+        <img [src]="recipe.imageUrl" alt="Recipe Image">
+    }
+    <h2 class="title">{{ recipe.name }}</h2>
     <div class="rating">
         <app-star-rating [rating]="recipe.rating"/>
     </div>
