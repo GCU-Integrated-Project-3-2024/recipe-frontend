@@ -1,2 +1,10 @@
 <app-header title="Discover">
+    <div class="controls">
+        <input class="search" type="text" placeholder="Search for recipes..." (input)="onSearch($event)">
+    </div>
 </app-header>
+<div class="recipes">
+    @for(recipe of recipes; track recipe) {
+        <app-recipe-card class="recipe-card" [recipe]="recipe"></app-recipe-card>
+    }
+</div>
