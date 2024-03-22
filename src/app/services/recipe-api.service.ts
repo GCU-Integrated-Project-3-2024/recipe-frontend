@@ -24,7 +24,6 @@ export class RecipeApiService {
         });
       }
 
-      console.log(recipes);
       return recipes;
 
     } catch (error) {
