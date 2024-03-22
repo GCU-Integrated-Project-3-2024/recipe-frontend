@@ -1,10 +1,11 @@
 nav {
+    min-width: 240px;
     background-color: #212121;
-    padding: 10px 20px;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
     
     .logo {
       color: #fff;
@@ -13,8 +14,8 @@ nav {
       text-decoration: none;
   
       img {
-        width: 40px;
-        height: 40px;
+        width: 60px;
+        height: 60px;
         margin-right: 10px;
       }
     }
