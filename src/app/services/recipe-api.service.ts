@@ -1,4 +1,5 @@
-import { Injectable, Input } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { Recipe } from '../interfaces/recipe.interface';
 import axios from 'axios';
 
 @Injectable({
@@ -6,18 +7,29 @@ import axios from 'axios';
 })
 
 export class RecipeApiService {
-
   constructor() { }
 
-  getRecipes(query: string) {
-    return axios.get('https://recipe-by-api-ninjas.p.rapidapi.com/v1/recipe', {
-      params: {
-        'query': query
-      },
-      headers: {
-        'X-RapidAPI-Key': '570b9f878amsh7373e8ca4d3b615p1fef3fjsn99247c2f882f',
-        'X-RapidAPI-Host': 'recipe-by-api-ninjas.p.rapidapi.com'
+  async getRecipeByName(query: string) {
+    try {
+      const response = await axios.get('https://themealdb.com/api/json/v1/1/search.php?s=' + query, {});
+
+      let recipes: Recipe[] = [];
+
+      if (Array.isArray(response.data.meals)) {
+        recipes = response.data.meals.map((meal: any) => {
+          return {
+            name: meal.strMeal,
+            imageUrl: meal.strMealThumb,
+          };
+        });
       }
-  });
-}
+
+      console.log(recipes);
+      return recipes;
+
+    } catch (error) {
+      console.error('Error fetching recipes:', error);
+      throw error;
+    }
+  }
 }
