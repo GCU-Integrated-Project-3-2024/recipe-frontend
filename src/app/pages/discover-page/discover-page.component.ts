@@ -28,7 +28,6 @@ export class DiscoverPageComponent {
     try {
       const response = await this.recipeApiService.getRecipeByName(query);
       this.recipes = response;
-      console.log(this.recipes);
     } catch (error) {
       console.error(error);
     }
