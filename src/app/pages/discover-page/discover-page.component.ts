@@ -3,11 +3,12 @@ import { HeaderComponent } from '../../components/header/header.component';
 import { RecipeApiService } from   '../../services/recipe-api.service';
 import { Recipe } from '../../interfaces/recipe.interface';
 import { RecipeCardComponent } from '../../components/recipe/recipe-card/recipe-card.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-discover-page',
   standalone: true,
-  imports: [HeaderComponent, RecipeCardComponent],
+  imports: [HeaderComponent, RecipeCardComponent, RouterModule],
   templateUrl: './discover-page.component.html',
   styleUrl: './discover-page.component.scss'
 })

@@ -9,25 +9,39 @@ import axios from 'axios';
 export class RecipeApiService {
   constructor() { }
 
-  async getRecipeByName(query: string) {
+  private convertToRecipe(meal: any): Recipe {
+    return {
+      id: meal.idMeal,
+      name: meal.strMeal,
+      imageUrl: meal.strMealThumb,
+      rating: 0,
+    };
+  }
+  
+  private handleResponse(response: any): Recipe[] {
+    let recipes: Recipe[] = [];
+    if (Array.isArray(response.data.meals)) {
+      recipes = response.data.meals.map(this.convertToRecipe);
+    }
+    return recipes;
+  }
+  
+  async getRecipeByName(query: string){
     try {
       const response = await axios.get('https://themealdb.com/api/json/v1/1/search.php?s=' + query, {});
-
-      let recipes: Recipe[] = [];
-
-      if (Array.isArray(response.data.meals)) {
-        recipes = response.data.meals.map((meal: any) => {
-          return {
-            name: meal.strMeal,
-            imageUrl: meal.strMealThumb,
-          };
-        });
-      }
-
-      return recipes;
-
+      return this.handleResponse(response);
     } catch (error) {
       console.error('Error fetching recipes:', error);
+      throw error;
+    }
+  }
+  
+  async getRecipeById(id: string) {
+    try {
+      const response = await axios.get('https://themealdb.com/api/json/v1/1/lookup.php?i=' + id, {});
+      return this.handleResponse(response);
+    } catch (error) {
+      console.error('Error fetching recipe:', error);
       throw error;
     }
   }
