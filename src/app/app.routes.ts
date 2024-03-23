@@ -5,6 +5,7 @@ import { BaseLayoutComponent } from "./layouts/base-layout/base-layout.component
 import { RecipePageComponent } from './pages/recipe-page/recipe-page.component';
 import { DiscoverPageComponent } from './pages/discover-page/discover-page.component';
 import { AccountPageComponent } from './pages/account-page/account-page.component';
+import { RecipebookPageComponent } from './pages/recipebook-page/recipebook-page.component';
 
 export const routes: Routes = [
 
@@ -15,8 +16,9 @@ export const routes: Routes = [
     children: [
       {path: '', component: HomePageComponent},
       {path: 'home', component: HomePageComponent},
-      {path: 'recipes', component: RecipePageComponent},
+      {path: 'recipebook', component: RecipebookPageComponent},
       {path: 'discover', component: DiscoverPageComponent},
+      {path: 'recipe/:id', component: RecipePageComponent},
       {path: 'account', component: AccountPageComponent}
     ],
   },
