@@ -49,7 +49,7 @@ export class RecipeApiService {
   
   async getRecipeByName(query: string){
     try {
-      const response = await axios.get('https://themealdb.com/api/json/v1/1/search.php?s=' + query, {});
+      const response = await axios.get('https://themealdb.com/api/json/v2/9973533/search.php?s=' + query, {});
       return this.handleResponse(response);
     } catch (error) {
       console.error('Error fetching recipes:', error);
@@ -59,7 +59,7 @@ export class RecipeApiService {
   
   async getRecipeById(id: string) {
     try {
-      const response = await axios.get('https://themealdb.com/api/json/v1/1/lookup.php?i=' + id, {});
+      const response = await axios.get('https://themealdb.com/api/json/v2/9973533/lookup.php?i=' + id, {});
       return this.handleResponse(response);
     } catch (error) {
       console.error('Error fetching recipe:', error);
