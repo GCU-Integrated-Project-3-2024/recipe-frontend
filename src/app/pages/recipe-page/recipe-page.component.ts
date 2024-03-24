@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { RecipeCardComponent } from '../../components/recipe/recipe-card/recipe-card.component';
 import { RecipeApiService } from '../../services/recipe-api.service';
 import { Recipe } from '../../interfaces/recipe.interface';
+import { RecipeDetailsComponent } from '../../components/recipe/recipe-details/recipe-details.component';
 
 @Component({
   selector: 'app-recipe-page',
   standalone: true,
-  imports: [RecipeCardComponent],
+  imports: [RecipeDetailsComponent],
   templateUrl: './recipe-page.component.html',
   styleUrl: './recipe-page.component.scss'
 })
