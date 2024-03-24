@@ -1,7 +1,13 @@
 .recipes-bar {
     display: flex;
     margin-top: 10px;
-    justify-content: center;
+    justify-content: flex-start;
     padding-top: 2px;
-    overflow-x: auto; /* Enables horizontal scrolling if needed */
+    overflow-x: auto;
+    scrollbar-width: thin;
+    margin-left: 0;
+}
+
+app-recipe-card {
+    padding: 10px;
 }

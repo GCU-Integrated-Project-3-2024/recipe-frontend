@@ -1,0 +1,43 @@
+.container {
+    display: flex;
+    margin: auto;
+    color: #fff;
+    padding: 1em;
+    background-color: #121212;
+    border-radius: 10px;
+    margin-bottom: 1em;
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding-right: 2em;
+    border-right: 1px solid #212121;
+
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+    
+    app-star-rating {
+        margin-top: 1em;
+    
+    }
+}
+
+.right-column {
+    width: 100%;
+    padding-left: 1em;
+
+    h3 {
+        margin: 0;
+        padding: 0;
+    }
+    
+    li {
+        list-style-type: disc;
+        margin-bottom: 1em;
+    }
+}
