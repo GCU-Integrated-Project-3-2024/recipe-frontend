@@ -10,11 +10,32 @@ export class RecipeApiService {
   constructor() { }
 
   private convertToRecipe(meal: any): Recipe {
+    const ingredients: string[] = [];
+    const instructions: string[] = [];
+
+    for (let i = 1; i <= 20; i++) {
+        const ingredientKey = `strIngredient${i}`;
+        const measureKey = `strMeasure${i}`;
+
+        if (meal[ingredientKey] && meal[ingredientKey].trim() !== '') {
+            const ingredient = `${meal[measureKey]} ${meal[ingredientKey]}`;
+            ingredients.push(ingredient);
+        } else {
+            break;
+        } 
+    }
+
+    if (meal.strInstructions) {
+      instructions.push(...meal.strInstructions.split('\r\n').filter((instruction: string) => instruction.trim() !== ''));
+    }
+
     return {
-      id: meal.idMeal,
-      name: meal.strMeal,
-      imageUrl: meal.strMealThumb,
-      rating: 0,
+        id: meal.idMeal,
+        name: meal.strMeal,
+        instructions: instructions,
+        ingredients: ingredients,
+        imageUrl: meal.strMealThumb,
+        rating: 0,
     };
   }
   
