@@ -1,4 +1,11 @@
-<div class="test">
+<app-header [title]="recipes[0].name">
+    <div class="images">
+        <a [href]="recipes[0].youtubeUrl">  
+            <img src="../../../../assets/icons/youtube.svg">
+        </a>
+    </div>
+</app-header>
+<div class="recipe-details">
     @if (recipes) {
         <app-recipe-details [recipe]="recipes[0]"></app-recipe-details>
     }
