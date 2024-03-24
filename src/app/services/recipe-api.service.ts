@@ -66,4 +66,14 @@ export class RecipeApiService {
       throw error;
     }
   }
+
+  async getRandomRecipes() {
+    try {
+      const response = await axios.get('https://themealdb.com/api/json/v2/9973533/randomselection.php', {});
+      return this.handleResponse(response);
+    } catch (error) {
+      console.error('Error fetching recipe:', error);
+      throw error;
+    }
+  }
 }
