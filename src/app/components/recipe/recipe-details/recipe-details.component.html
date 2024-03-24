@@ -1,0 +1,31 @@
+<app-header [title]="recipe.name"></app-header>
+<app-content>
+    <div class="container">
+        <div class="left-column">
+            <img [src]="recipe.imageUrl" alt="Recipe Image">
+            @if(recipe.ingredients && recipe.ingredients.length) {
+                <div>
+                    <h3>Ingredients</h3>
+                    <ul>
+                        @for (ingredient of recipe.ingredients; track ingredient) {
+                            <li>{{ ingredient }}</li>
+                        }
+                    </ul>
+                </div>
+            }
+            <app-star-rating [rating]="recipe.rating"></app-star-rating>
+        </div>
+        <div class="right-column">
+            @if (recipe.instructions && recipe.instructions.length) {
+                <div>
+                    <h3>Instructions</h3>
+                    <ol>
+                        @for (instruction of recipe.instructions; track instruction) {
+                            <li>{{ instruction }}</li>
+                        }
+                    </ol>
+                </div>
+            }
+        </div>
+    </div>
+</app-content> 
