@@ -34,6 +34,7 @@ export class RecipeApiService {
         name: meal.strMeal,
         instructions: instructions,
         ingredients: ingredients,
+        youtubeUrl: meal.strYoutube,
         imageUrl: meal.strMealThumb,
         rating: 0,
     };
