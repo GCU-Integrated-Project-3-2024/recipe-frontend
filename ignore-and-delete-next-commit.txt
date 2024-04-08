@@ -1,5 +1,0 @@
-WSL terminal unreponsive
-(Unable to troubleshoot after 10 hours and do not want to uninstall and reinstall the distribution incase it corrupts/causes further errors)
-Testing if I am able to command my Ubuntu outside via Powershell
-If this commit is successful I should be able to (Commiting via Powershell not VSCode)
-Do not utilise this commit
