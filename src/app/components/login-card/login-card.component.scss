@@ -39,7 +39,7 @@ h2 {
     border: 1px solid #333;
     padding: 12px;
     border-radius: 5px;
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
     background-color: #1f1f1f;
     color: #fff;
     font-family: inherit;
@@ -66,4 +66,19 @@ h2 {
     color: #09ce7c;
     text-decoration: none;
     user-select: none;
+}
+
+.register {
+    user-select: none;
+    margin-top: 0em;
+    margin-bottom: 1.8em;
+}
+.register a {
+    color: #09ce7c;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.register p {
+    color: #ccc;
 }

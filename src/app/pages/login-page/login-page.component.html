@@ -1,5 +1,9 @@
 <div class="container">
   <div class="card-container">
-    <app-login-card></app-login-card>
+    @if (showLogin == true) {
+      <app-login-card (toggleForms)="showLogin = !showLogin"></app-login-card>
+  } @else {
+      <app-register-card (toggleForms)="showLogin = !showLogin"></app-register-card>
+  }
   </div>  
 </div>

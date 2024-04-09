@@ -10,5 +10,6 @@ import { RegisterCardComponent } from '../../components/register-card/register-c
   styleUrl: './login-page.component.scss'
 })
 export class LoginPageComponent {
+  showLogin = true;
 
 }

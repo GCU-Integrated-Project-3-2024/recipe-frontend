@@ -39,7 +39,7 @@ h2 {
     border: 1px solid #333;
     padding: 12px;
     border-radius: 5px;
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
     background-color: #1f1f1f;
     color: #fff;
     font-family: inherit;
@@ -49,7 +49,8 @@ h2 {
     background-color: #09ce7c;
     color: #fff;
     cursor: pointer;
-    margin-top: 1em;
+    margin-top:1em;
+    margin-bottom: 0.2em;
     transition: background-color 0.3s ease;
 }
 
@@ -57,13 +58,18 @@ h2 {
     background-color: #08e98b;
 }
 
-.password-reset {
-    margin-top: 1em;
-    color: #ccc;
+.login {
+    user-select: none;
+    margin-top: 0em;
+    margin-bottom: 1.8em;
 }
 
-.password-reset a {
+.login a {
     color: #09ce7c;
     text-decoration: none;
-    user-select: none;
+    cursor: pointer;
+}
+
+.login p {
+    color: #ccc;
 }

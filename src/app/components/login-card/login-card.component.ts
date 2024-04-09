@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-login-card',
@@ -8,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './login-card.component.scss'
 })
 export class LoginCardComponent {
+  @Output() toggleForms = new EventEmitter<void>();
 
+  onRegisterClick() {
+    this.toggleForms.emit();
+  }
 }
