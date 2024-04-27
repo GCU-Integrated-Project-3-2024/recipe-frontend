@@ -1,0 +1,78 @@
+.test {
+    overflow-y: auto;
+    width: 100%;
+    height: 100%;
+}
+
+.recipeNameHeader, .recipeImageHeader, .ingredientHeader, .instructionHeader, .recipeLinkHeader {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.recipeName, .recipeImage, .recipeLink {
+    text-align: center;  
+}
+
+.ingredientError, .instructionError {
+    text-align: center;
+    color: red;
+}
+
+.moreIngredients, .moreInstructions {
+    text-align: center;
+}
+
+.ingredientForm select, .ingredientForm input, .instructionForm input, .ingredientForm button, .instructionForm button, .recipeName input, .recipeLink input, .recipeImage input {
+    border: 1px solid #333;
+    padding: 8px;
+    border-radius: 5px;
+    margin-right: 8px;
+    background-color: #303030;
+    color: #fff;
+    font-family: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+.recipeName input, .instructionForm input, .recipeLink input, .recipeImage input {
+    width: 100%;
+}
+
+.ingredientForm, .instructionForm, .recipeName, .recipeLink, .recipeImage {
+    padding: 2px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 2px;
+    color: #fff;
+    font-family: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.addRecipeSubmit, .ingredientForm, .instructionsForm {
+    text-align: center;
+}
+
+.addRecipeSubmit input[type = "submit"] {
+    border: 1px solid #333;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 2em;
+    background-color: #09ce7c;
+    color: #fff;
+    font-family: inherit;
+    cursor: pointer;
+}
+.moreIngredients button, .moreInstructions button {
+    border: 1px solid #333;
+    padding: 6px;
+    width: 10%;
+    border-radius: 2px;
+    margin-right: 8px;
+    background-color: #303030;
+    color: #fff;
+    font-family: inherit;
+}

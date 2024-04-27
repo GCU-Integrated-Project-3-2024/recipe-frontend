@@ -6,6 +6,8 @@ import { RecipePageComponent } from './pages/recipe-page/recipe-page.component';
 import { DiscoverPageComponent } from './pages/discover-page/discover-page.component';
 import { AccountPageComponent } from './pages/account-page/account-page.component';
 import { RecipebookPageComponent } from './pages/recipebook-page/recipebook-page.component';
+import { RegisterCardComponent } from './components/register-card/register-card.component';
+import { LoginCardComponent } from './components/login-card/login-card.component';
 
 export const routes: Routes = [
 
@@ -19,11 +21,11 @@ export const routes: Routes = [
       {path: 'recipebook', component: RecipebookPageComponent},
       {path: 'discover', component: DiscoverPageComponent},
       {path: 'recipe/:id', component: RecipePageComponent},
-      {path: 'account', component: AccountPageComponent}
+      {path: 'account', component: AccountPageComponent},
     ],
   },
 
   // Plain Routes
-  {path: 'login', component: LoginPageComponent}
+  {path: 'login', component: LoginPageComponent},
 
 ];

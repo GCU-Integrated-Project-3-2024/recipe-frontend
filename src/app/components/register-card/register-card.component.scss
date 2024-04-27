@@ -49,7 +49,8 @@ h2 {
     background-color: #09ce7c;
     color: #fff;
     cursor: pointer;
-    margin-top: 1em;
+    margin-top:1em;
+    margin-bottom: 0.2em;
     transition: background-color 0.3s ease;
 }
 
@@ -57,28 +58,18 @@ h2 {
     background-color: #08e98b;
 }
 
-.password-reset {
-    margin-top: 1em;
-    color: #ccc;
-}
-
-.password-reset a {
-    color: #09ce7c;
-    text-decoration: none;
-    user-select: none;
-}
-
-.register {
+.login {
     user-select: none;
     margin-top: 0em;
     margin-bottom: 1.8em;
 }
-.register a {
+
+.login a {
     color: #09ce7c;
     text-decoration: none;
     cursor: pointer;
 }
 
-.register p {
+.login p {
     color: #ccc;
 }
