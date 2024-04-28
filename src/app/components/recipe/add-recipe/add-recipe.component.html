@@ -1,18 +1,7 @@
-<form class="test" action="#">
+<form class="test" action="#" >
 <h2 class= "recipeNameHeader">Name</h2>
     <div class = "recipeName">
-    <input type ="text" id="recipeName" placeholder="Enter the recipe name..."/>
-    </div>
-
-
-<h2 class= "recipeImageHeader">Image</h2>
-    <div class="recipeImage">
-        <input type="file" id="recipeImage" name="recipeImage" accept="image/*">
-    </div>
-
-<h2 class="recipeLinkHeader">Video</h2>
-    <div class = "recipeLink">
-        <input type="url" id="recipeLink" name="recipeLink" placeholder="Enter cooking video link...">
+        <input type="text" [(ngModel)]="title" id="recipeName" name="title" placeholder="Enter the recipe name..."/>
     </div>
 
 <h2 class="ingredientHeader">Ingredients</h2>
@@ -46,8 +35,7 @@
     </div>
 
     <div class="addRecipeSubmit">
-        <input type="submit" name="submit" value="Enter new Recipe">
+        <button type="submit" name="submit" value="Enter new Recipe" (click)="postRecipe()">Submit</button>
     </div>
-    
 </form>
 

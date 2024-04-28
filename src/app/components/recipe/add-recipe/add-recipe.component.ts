@@ -9,8 +9,10 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './add-recipe.component.html',
   styleUrl: './add-recipe.component.scss'
 })
+
 export class AddRecipeComponent {
   
+  title: string = '';
   ingredients: { ingredient: string, type: string, amount: number}[] = [{ ingredient: '', type: '', amount: 0}];
   instructions: { instruction: string}[] = [{ instruction: ''}];
   minIngredientError: boolean = false;
@@ -44,8 +46,7 @@ export class AddRecipeComponent {
 
   onRemoveInstructionClick(index: number) {
     if (this.instructions.length > 1) {
-      this.instructions.splice(index, 1);
-      
+      this.instructions.splice(index, 1);  
    }
    else if (this.instructions.length == 15){
       this.maxInstructionError = true;
@@ -55,4 +56,31 @@ export class AddRecipeComponent {
     }
   }
 
+  postRecipe() {
+
+    if(this.ingredients.length < 1 || this.instructions.length < 1) {
+      console.error('Form fields cannot be empty');
+      return;
+    }
+
+    if (this.ingredients.length > 15 || this.instructions.length > 15) {
+      console.error('Max Ingredients or Instructions is 15');
+      return;
+    }
+
+    if (this.title == '') {
+      console.error('Title cannot be empty');
+      return;
+    }
+
+    let recipe = {
+      title: this.title,
+      ingredients: this.ingredients.map(ing => `${ing.amount} ${ing.type} ${ing.ingredient}`),
+      instructions: this.instructions.map(inst => inst.instruction)
+    };
+    
+    console.log('Recipe Posted');
+    console.log(recipe);
+    return recipe;
+  }
 }
