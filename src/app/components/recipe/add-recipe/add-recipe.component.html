@@ -1,27 +1,16 @@
-<form class="test" action="#">
+<form class="test" action="#" >
 <h2 class= "recipeNameHeader">Name</h2>
     <div class = "recipeName">
-    <input type ="text" id="recipeName" placeholder="Enter the recipe name..."/>
-    </div>
-
-
-<h2 class= "recipeImageHeader">Image</h2>
-    <div class="recipeImage">
-        <input type="file" id="recipeImage" name="recipeImage" accept="image/*">
-    </div>
-
-<h2 class="recipeLinkHeader">Video</h2>
-    <div class = "recipeLink">
-        <input type="url" id="recipeLink" name="recipeLink" placeholder="Enter cooking video link...">
+        <input (click)="emptyNameError = false"type="text" [(ngModel)]="title" id="recipeName" name="title" placeholder="Enter the recipe name..."/>
     </div>
 
 <h2 class="ingredientHeader">Ingredients</h2>
 <p class="ingredientError" *ngIf="minIngredientError == true">Error: You need at least 1 Ingredient!</p>
-<p class="ingredientError" *ngIf="maxIngredientError == true">Error: Max 15 Ingredients!</p>
+<p class="ingredientError" *ngIf="maxIngredientError == true">Error: Max 20 Ingredients!</p>
 <p class="moreIngredients">Add more ingredients: <button (click)="onAddIngredientClick()">+</button></p>
     <div class="ingredientForm" *ngFor="let ingredient of ingredients; let i = index">
-        <input type="number" [(ngModel)]="ingredient.amount" id ="ingredientAmount{{i}}" name="ingredientAmount{{i}}" min="0" max ="999" placeholder="Amount..." required>
-        <select [(ngModel)]="ingredient.type" id="ingredientType{{i}}" name="ingredientType{{i}}" required>
+        <input (click)="emptyFormError = false" type="number" [(ngModel)]="ingredient.amount" id ="ingredientAmount{{i}}" name="ingredientAmount{{i}}" min="0" max ="999" placeholder="Amount..." required>
+        <select (click)="emptyFormError = false" [(ngModel)]="ingredient.type" id="ingredientType{{i}}" name="ingredientType{{i}}" required>
             <option disabled selected value></option>
             <option value="-">-</option>
             <option value="tsp">tsp</option>
@@ -31,23 +20,24 @@
             <option value="ml">ml</option>
             <option value="l">l</option>
         </select>
-        <input (click)="minIngredientError = false" [(ngModel)]="ingredient.ingredient"  type="text" id="ingredient{{i}}" name="ingredient{{i}}" placeholder="Enter ingredient..."required/>
+        <input (click)="removeErrorsIngredientClick()" [(ngModel)]="ingredient.ingredient"  type="text" id="ingredient{{i}}" name="ingredient{{i}}" placeholder="Enter ingredient..."required/>
         <button (click)="onRemoveIngredientClick(i)">x</button>
     </div>
 
 <h2 class="instructionHeader">Instructions</h2>
 <p class="instructionError" *ngIf="minInstructionError == true">Error: You need at least 1 Instruction!</p>
-<p class="instructionError" *ngIf="maxInstructionError == true">Error: Max 15 Instructions!</p>
+<p class="instructionError" *ngIf="maxInstructionError == true">Error: Max 20 Instructions!</p>
 <p class="moreInstructions">Add more instructions: <button (click)="onAddInstructionClick()">+</button></p>
 
     <div class="instructionForm" *ngFor="let instruction of instructions; let i = index">
-        <input (click)="minInstructionError = false" [(ngModel)]="instruction.instruction" type="text" id="instruction{{i}}" name="instruction{{i}}" placeholder="Enter the next instruction..."required/>
+        <input (click)="removeErrorsInstructionClick()" [(ngModel)]="instruction.instruction" type="text" id="instruction{{i}}" name="instruction{{i}}" placeholder="Enter the next instruction..."required/>
         <button (click)="onRemoveInstructionClick(i)">x</button>
     </div>
 
-    <div class="addRecipeSubmit">
-        <input type="submit" name="submit" value="Enter new Recipe">
+    <p class="ingredientError" *ngIf="emptyNameError == true">Error: Recipe Name field cannot be empty!</p>
+    <p class="ingredientError" *ngIf="emptyFormError == true">Error: Ingredient/Instruction fields cannot be empty!</p>
+    <div class="addRecipeSubmit">  
+        <button type="submit" name="submit" value="Enter new Recipe" (click)="createRecipe()">Submit</button>    
     </div>
-    
 </form>
 
