@@ -37,8 +37,7 @@
     <p class="ingredientError" *ngIf="emptyNameError == true">Error: Recipe Name field cannot be empty!</p>
     <p class="ingredientError" *ngIf="emptyFormError == true">Error: Ingredient/Instruction fields cannot be empty!</p>
     <div class="addRecipeSubmit">  
-        <button type="submit" name="submit" value="Enter new Recipe" (click)="postRecipe()">Submit</button>
-        
+        <button type="submit" name="submit" value="Enter new Recipe" (click)="createRecipe()">Submit</button>    
     </div>
 </form>
 

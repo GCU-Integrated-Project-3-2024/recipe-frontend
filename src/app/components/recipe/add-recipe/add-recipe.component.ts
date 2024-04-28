@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Recipe } from '../../../interfaces/recipe.interface';
+import { AddRecipeService } from '../../../services/add-recipe.service';
 
 @Component({
   selector: 'app-add-recipe',
@@ -11,6 +13,8 @@ import { FormsModule } from '@angular/forms';
 })
 
 export class AddRecipeComponent {
+
+  constructor(private recipeService: AddRecipeService) { }
   
   title: string = '';
   ingredients: { ingredient: string, type: string, amount: number}[] = [{ ingredient: '', type: '', amount: 0}];
@@ -82,7 +86,7 @@ export class AddRecipeComponent {
     this.maxIngredientError= false;
   }
 
-  postRecipe() {
+  async createRecipe() {
 
     /* Makes sure to go through every single array for both ingredient and array to disallow submit
      if even one field is false*/
@@ -112,13 +116,32 @@ export class AddRecipeComponent {
     }
 
     let recipe = {
-      title: this.title,
-      ingredients: this.ingredients.map(ing => `${ing.amount} ${ing.type} ${ing.ingredient}`),
-      instructions: this.instructions.map(inst => inst.instruction)
+      name: this.title,
+      ingredientList: this.ingredients.map(ing => `${ing.amount} ${ing.type} ${ing.ingredient}`),
+      instructionList: this.instructions.map(inst => inst.instruction),
+      imageUrl: 'https://via.placeholder.com/150',
+      numberOfServings: 1,
+      rating: 0
     };
     
-    console.log('Recipe Posted');
     console.log(recipe);
-    return recipe;
+    try {
+      this.recipeService.addRecipe(recipe)
+        .subscribe({
+          next: (response) => {
+            console.log('Recipe Posted Successfully:', response);
+          },
+          error: (error) => {
+            console.error('Error posting recipe:', error);
+          },
+          complete: () => {
+            console.log('API call completed (optional)'); // Optional complete handler
+          }
+        });
+    } catch (error) {
+      console.error('Unexpected error:', error);
+    } finally {
+      console.log('Recipe creation attempt complete');
+    }
   }
 }
