@@ -1,0 +1,80 @@
+.container {
+    margin: auto;
+    color: #fff;
+    padding: 1em;
+    background-color: #121212;
+    border-radius: 10px;
+    margin-bottom: 1em;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    height: 70%;
+    border-radius: 10px;
+    color: #fff;
+    background-color: #121212;
+    border: 1px solid #1f1f1f;
+    box-shadow: 0 5px 15px 0px hsla(0, 0%, 0%, 0.5);
+    text-align: center;
+    padding: 20px;
+}
+
+h2 {
+    user-select: none;
+    margin: 0;
+}
+
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    user-select: none;
+    margin-bottom: 0.5em;
+    color: #ccc;
+}
+
+.form-group input {
+    border: 1px solid #333;
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 1em;
+    background-color: #1f1f1f;
+    color: #fff;
+    font-family: inherit;
+}
+
+.form-group input[type="submit"] {
+    background-color: #09ce7c;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.form-group input[value="Delete"] {
+    background-color: #c11229;
+    
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #08e98b;
+}
+
+.form-group input[value="Delete"]:hover {
+    background-color: #db3b3b;
+}
+.password-reset {
+    margin-top: 1em;
+    color: #ccc;
+}
+
+.password-reset a {
+    color: #09ce7c;
+    text-decoration: none;
+    user-select: none;
+}
