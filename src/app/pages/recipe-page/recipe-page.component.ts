@@ -10,8 +10,9 @@ import { HeaderComponent } from '../../components/header/header.component';
   standalone: true,
   imports: [RecipeDetailsComponent, HeaderComponent],
   templateUrl: './recipe-page.component.html',
-  styleUrl: './recipe-page.component.scss'
+  styleUrl: './recipe-page.component.scss',
 })
+
 export class RecipePageComponent {
 
   constructor(private route: ActivatedRoute, private recipeApiService : RecipeApiService) {}

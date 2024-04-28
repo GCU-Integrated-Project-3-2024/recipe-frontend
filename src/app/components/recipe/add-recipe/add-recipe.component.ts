@@ -1,8 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Recipe } from '../../../interfaces/recipe.interface';
-import { AddRecipeService } from '../../../services/add-recipe.service';
+import { BackendRecipeService } from '../../../services/backend-recipe.service';
 
 @Component({
   selector: 'app-add-recipe',
@@ -14,7 +13,7 @@ import { AddRecipeService } from '../../../services/add-recipe.service';
 
 export class AddRecipeComponent {
 
-  constructor(private recipeService: AddRecipeService) { }
+  constructor(private backendRecipeService: BackendRecipeService) { }
   
   title: string = '';
   ingredients: { ingredient: string, type: string, amount: number}[] = [{ ingredient: '', type: '', amount: 0}];
@@ -119,14 +118,14 @@ export class AddRecipeComponent {
       name: this.title,
       ingredientList: this.ingredients.map(ing => `${ing.amount} ${ing.type} ${ing.ingredient}`),
       instructionList: this.instructions.map(inst => inst.instruction),
-      imageUrl: 'https://via.placeholder.com/150',
+      imageUrl: '',
       numberOfServings: 1,
       rating: 0
     };
     
     console.log(recipe);
     try {
-      this.recipeService.addRecipe(recipe)
+      this.backendRecipeService.addRecipe(recipe)
         .subscribe({
           next: (response) => {
             console.log('Recipe Posted Successfully:', response);

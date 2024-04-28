@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RecipeDisplayComponent } from '../../components/recipe/recipe-display/recipe-display.component';
-import { RecipeApiService } from '../../services/recipe-api.service';
+import { BackendRecipeService } from '../../services/backend-recipe.service';
 import { Recipe } from '../../interfaces/recipe.interface';
 
 @Component({
@@ -12,23 +12,25 @@ import { Recipe } from '../../interfaces/recipe.interface';
 })
 export class RecipebookPageComponent {
 
-  constructor(private recipeApiService : RecipeApiService) {}
+  constructor(private backendRecipeService : BackendRecipeService) {}
 
   ngOnInit() {
-    this.getRecipes('');
+    this.getRecipes();
   }
 
   recipes: Recipe[] = [];
   canSearch: boolean = true;
   lastQuery: string = '';
 
-  async getRecipes(query: string) {
-    try {
-      const response = await this.recipeApiService.getRecipeByName(query);
-      this.recipes = response;
-    } catch (error) {
-      console.error(error);
-    }
+  getRecipes() {
+    this.backendRecipeService.getAllRecipes()
+      .subscribe({
+        next: (recipes: Recipe[]) => {
+          this.recipes = recipes;
+        },
+        error: (error) => {
+          console.error('Error getting recipes:', error);
+        }
+      });
   }
-  
 }
