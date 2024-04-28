@@ -19,56 +19,94 @@ export class AddRecipeComponent {
   minInstructionError: boolean = false;
   maxIngredientError: boolean = false;
   maxInstructionError: boolean = false;
+  emptyNameError: boolean = false;
+  emptyFormError: boolean = false;
+  i: number = 0;
 
   onAddIngredientClick() {
-    this.ingredients.push({ ingredient: '', type: '', amount: 0});
-    console.log(this.ingredients);
+    if (this.ingredients.length < 20) {
+      this.ingredients.push({ ingredient: '', type: '', amount: 0});
+      console.log(this.ingredients); // Checks Array input
+      this.minIngredientError = false;
+    }
+    else if (this.ingredients.length >= 20) {
+      this.maxIngredientError = true;
+    }
   }
 
   onRemoveIngredientClick(index: number) {
     if (this.ingredients.length > 1) {
       this.ingredients.splice(index, 1);
       console.log(index);
-      console.log(this.ingredients); // Ignore the Console logs, just testing some stuff
-   }
-   else if (this.ingredients.length == 15){
-    this.maxIngredientError = true;
-   }
+      this.maxIngredientError = false;
+    }
     else {
       this.minIngredientError = true;
     }
   }
 
   onAddInstructionClick() {
-    this.instructions.push({ instruction: '' })
-    console.log(this.instructions); // Ignore, same reason as above
+    if (this.instructions.length < 20) {
+      this.instructions.push({ instruction: '' })
+      console.log(this.instructions); // Checks Array input
+      this.minInstructionError = false;
+    }
+    else if (this.instructions.length >= 20){
+      this.maxInstructionError = true;
+    }
   }
 
   onRemoveInstructionClick(index: number) {
     if (this.instructions.length > 1) {
-      this.instructions.splice(index, 1);  
-   }
-   else if (this.instructions.length == 15){
-      this.maxInstructionError = true;
+      this.instructions.splice(index, 1);
+      this.maxInstructionError = false;
    }
     else {
       this.minInstructionError = true;
     }
   }
 
+  /* There's probably a better method for this than 2 seperate functions but idk what library can check
+     What it's specifically being called from with (click) */
+  removeErrorsInstructionClick()
+  {
+    this.emptyFormError = false;
+    this.minInstructionError = false;
+    this.maxInstructionError = false;
+  }
+
+  removeErrorsIngredientClick()
+  {
+    this.emptyFormError = false;
+    this.minIngredientError = false;
+    this.maxIngredientError= false;
+  }
+
   postRecipe() {
 
-    if(this.ingredients.length < 1 || this.instructions.length < 1) {
-      console.error('Form fields cannot be empty');
+    /* Makes sure to go through every single array for both ingredient and array to disallow submit
+     if even one field is false*/
+    if (this.ingredients.some(ingredient => {
+      return ingredient.ingredient == '' ||
+             ingredient.type == '' ||
+             ingredient.amount == 0}) == true 
+             || this.instructions.some(instruction => {
+      return instruction.instruction == ''}) == true) 
+      {
+      this.emptyFormError = true; // Just because changing the ingredient 
+      console.log(this.emptyFormError); // All logs is me just testing to see if certain aspects work, can ignore
+      console.error('Ingredient/Instruction fields cannot be empty');
       return;
-    }
+      }
 
-    if (this.ingredients.length > 15 || this.instructions.length > 15) {
-      console.error('Max Ingredients or Instructions is 15');
+    if (this.ingredients.length > 20 || this.instructions.length > 20) {
+      this.maxIngredientError = true;
       return;
     }
 
     if (this.title == '') {
+      this.emptyNameError = true;
+      console.log(this.emptyNameError);
       console.error('Title cannot be empty');
       return;
     }
